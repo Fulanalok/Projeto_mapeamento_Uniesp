@@ -1,0 +1,25 @@
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #E11622;
+    display: flex;
+}
+
+ul, li, a {
+    list-style-type: none;
+    text-decoration: none;
+    color: #ffff;
+    display: flex;
+}
+
+ul li a {
+    padding-top: 36px;
+    padding-left: 40px;
+}
+
+.logoUniesp {
+    height: 100px;
+}
