@@ -21,15 +21,4 @@ public class UsuarioController {
             return "Credenciais inválidas!";
         }
     }
-
-    @PostMapping("/recuperar-senha")
-    public String recuperarSenha(@RequestParam String username, @RequestParam String email) {
-        Usuario usuario = usuarioService.findByUsernameAndEmail(username, email);
-        if (usuario != null) {
-            // Aqui você implementaria a lógica para enviar um e-mail de recuperação de senha
-            return "Um e-mail de recuperação de senha foi enviado para " + email;
-        } else {
-            return "Usuário não encontrado ou e-mail incorreto!";
-        }
-    }
 }
