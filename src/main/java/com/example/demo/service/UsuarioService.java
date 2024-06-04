@@ -1,7 +1,8 @@
-package com.example.demo.Service;
+package com.example.demo.service;
 
-import com.example.demo.Model.Usuario;
-import com.example.demo.Repository.UsuarioRepository;
+import com.example.demo.model.Usuario;
+import com.example.demo.repository.UsuarioRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,7 @@ public class UsuarioService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+    
 
     public Usuario findByUsername(String username) {
         return usuarioRepository.findByUsername(username);
@@ -25,6 +27,7 @@ public class UsuarioService {
     public Usuario findByUsernameAndEmail(String username, String email) {
         return usuarioRepository.findByUsernameAndEmail(username, email);
     }
+    
     
     public void deleteById(Long id) {
     	usuarioRepository.deleteById(id);
