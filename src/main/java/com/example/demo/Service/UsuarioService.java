@@ -25,4 +25,9 @@ public class UsuarioService {
     public Usuario findByUsernameAndEmail(String username, String email) {
         return usuarioRepository.findByUsernameAndEmail(username, email);
     }
+    
+    public void deleteById(Long id) {
+    	usuarioRepository.deleteById(id);
+    }
+    
 }

@@ -3,10 +3,11 @@ package com.example.demo.Controller;
 import com.example.demo.Model.Usuario;
 import com.example.demo.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/usuario")
 public class UsuarioController {
 
     @Autowired
@@ -21,4 +22,11 @@ public class UsuarioController {
             return "Credenciais inválidas!";
         }
     }
+    
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteByid(@PathVariable Long id) {
+    	usuarioService.deleteById(id);
+    }
+
 }
