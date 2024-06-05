@@ -1,9 +1,7 @@
 package com.example.demo.model;
 
-import jakarta.annotation.sql.DataSourceDefinition;
 import jakarta.persistence.Entity;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,9 +23,7 @@ public class Usuario {
     private String password;
     private String email;
 
-    public Object getPassword() {
-        return null;
-    }
+    // Novo campo para a nova senha
+    private String novaSenha;
 
 }
-

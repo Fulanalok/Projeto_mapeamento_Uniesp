@@ -23,11 +23,21 @@ public class UsuarioController {
             return "Credenciais inválidas!";
         }
     }
-    
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteByid(@PathVariable Long id) {
-    	usuarioService.deleteById(id);
+        usuarioService.deleteById(id);
     }
 
+    @PutMapping("/{id}/redefinir-senha")
+    public String redefinirSenha(@PathVariable Long id, @RequestParam String novaSenha) {
+        Usuario usuario = usuarioService.findById(id).orElse(null);
+        if (usuario != null) {
+            usuarioService.redefinirSenha(usuario, novaSenha);
+            return "Senha redefinida com sucesso!";
+        } else {
+            return "Usuário não encontrado!";
+        }
+    }
 }
