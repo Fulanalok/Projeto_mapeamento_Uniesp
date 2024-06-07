@@ -40,7 +40,7 @@ public class UsuarioService {
     }
 
     public void redefinirSenha(Usuario usuario, String novaSenha) {
-        String senhaCodificada = passwordEncoder.encode(novaSenha);o
+        String senhaCodificada = passwordEncoder.encode(novaSenha);
         usuario.setPassword(senhaCodificada);
         usuarioRepository.save(usuario);
     }
